@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shirsh Karn | Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+      color: #212529;
+      line-height: 1.6;
+      transition: all 0.5s ease;
+    }
+
+    .page {
+      display: none;
+      padding: 2rem;
+      max-width: 960px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .intro, .outro {
+      text-align: center;
+      padding: 5rem 2rem;
+      background-color: #343a40;
+      color: white;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .active.intro, .active.outro {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .intro h1, .outro h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .intro p, .outro p {
+      font-size: 1.2rem;
+    }
+
+    .enter-btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      color: white;
+      background-color: #007bff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .enter-btn:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+
+    header {
+      background-color: #343a40;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    .bio, .skills, .socials {
+      margin-bottom: 2rem;
+      padding: 1rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      color: #495057;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    ul li {
+      background-color: #dee2e6;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+    }
+
+    .socials a {
+      display: inline-block;
+      margin-right: 10px;
+      text-decoration: none;
+      color: #007bff;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .socials a:hover {
+      color: #0056b3;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      color: #6c757d;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="intro active" id="introPage">
+    <h1>Welcome to My World</h1>
+    <p>I'm Shirsh Karn — programmer, model, and aesthetic builder.</p>
+    <button class="enter-btn" onclick="enterSite()">Enter</button>
+  </div>
+
+  <div class="page" id="mainPage">
+    <header>
+      <h1>Shirsh Karn</h1>
+      <p>Aesthetic Builder • Online Model • Programmer</p>
+    </header>
+
+    <section class="bio">
+      <h2>About Me</h2>
+      <p>I'm Shirsh Karn, a 17-year-old aesthetic builder and small online model on Instagram. I have a deep passion for coding and development — blending creativity with logic. I enjoy sharing content that inspires fitness, aesthetics, and tech lifestyle.</p>
+    </section>
+
+    <section class="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Python</li>
+        <li>C#</li>
+      </ul>
+    </section>
+
+    <section class="socials">
+      <h2>Connect With Me</h2>
+      <a href="https://www.instagram.com/shirsh.karn/" target="_blank">Instagram</a>
+    </section>
+  </div>
+
+  <div class="outro page" id="endPage">
+    <h2>Thanks for Visiting!</h2>
+    <p>Stay aesthetic, stay inspired. Follow me for more on Instagram.</p>
+    <a class="enter-btn" href="https://www.instagram.com/shirsh.karn/" target="_blank">Follow on Instagram</a>
+  </div>
+
+  <footer>
+    &copy; 2025 Shirsh Karn. All rights reserved.
+  </footer>
+
+  <script>
+    function enterSite() {
+      const intro = document.getElementById('introPage');
+      const main = document.getElementById('mainPage');
+
+      intro.classList.remove('active');
+      setTimeout(() => {
+        intro.style.display = 'none';
+        main.classList.add('active');
+      }, 600);
+
+      setTimeout(() => {
+        main.classList.remove('active');
+        document.getElementById('endPage').classList.add('active');
+      }, 18000); // Shows outro after 18s
+    }
+  </script>
+
+</body>
+</html>
